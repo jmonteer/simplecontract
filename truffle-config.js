@@ -58,6 +58,10 @@ module.exports = {
       // confirmations: 1,    // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },    
+    test: {
+      url: "https://sandbox.truffleteams.com/5367db93-fc23-4642-b431-c27f4f3f6a07"	, // mainnet-fork 15/09/2020 18:09 - 10867637block
+      network_id: 1 // rinkeby's id
     },
   },
 
