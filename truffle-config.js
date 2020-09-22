@@ -42,15 +42,6 @@ module.exports = {
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
-    test: {
-      host: "127.0.0.1", // Localhost (default: none)
-      port: 8545,
-      network_id: 4,
-      // gas: 7000000,        // rinkeby has a lower block limit than mainnet
-      // confirmations: 1,    // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
-    },
     rinkeby_alchemy: {
       provider: () => new HDWalletProvider(mnemonic_test, `https://eth-rinkeby.alchemyapi.io/v2/cFB4SYjzZIV4JaniznZ1SD_PH4-SVrRs`),
       network_id: 4,       // Ropsten's id
@@ -60,8 +51,11 @@ module.exports = {
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },    
     test: {
-      url: "https://sandbox.truffleteams.com/5367db93-fc23-4642-b431-c27f4f3f6a07"	, // mainnet-fork 15/09/2020 18:09 - 10867637block
-      network_id: 1 // rinkeby's id
+      // url: "https://sandbox.truffleteams.com/5367db93-fc23-4642-b431-c27f4f3f6a07"	, // mainnet-fork 15/09/2020 18:09 - 10867637block
+      provider: () => 
+        new HDWalletProvider("poem fine level quit control session cheap craft cheap odor upset exchange", "https://sandbox.truffleteams.com/5367db93-fc23-4642-b431-c27f4f3f6a07"), 
+      network_id: 1,
+      skipDryRun: true
     },
   },
 
